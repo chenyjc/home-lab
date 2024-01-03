@@ -1,6 +1,6 @@
 在Debian命令行上安装KVM（Kernel-based Virtual Machine）并在虚拟机中安装Windows是可行的。您可以使用一个名为"virt-manager"的工具，它提供了一个基于图形界面的管理界面，但请注意，它是一个GUI工具。如果您的Debian系统没有图形界面，您可以尝试使用一个称为"virt-viewer"的工具，它提供了一个简单的图形界面来查看虚拟机的控制台。
 
-以下是在Debian上安装KVM和virt-viewer的基本步骤：
+## 以下是在Debian上安装KVM和virt-viewer的基本步骤：
 
 1. **安装KVM：**
    ```bash
@@ -46,6 +46,8 @@
 1. **安装Cockpit：**
    ```bash
    sudo apt install cockpit
+   # 必须安装以下模块，否则看不到虚拟机管理界面
+   sudo apt install cockpit-machines
    ```
 
 2. **启动Cockpit服务：**
@@ -63,4 +65,14 @@
 
    您将能够使用Cockpit的Web界面管理您的KVM虚拟机。
 
-请注意，这只是一种选择，您可以根据自己的需求选择适合您的管理工具。
+## 安装Windows虚拟机，并允许局域网互通
+
+创建时网络选择"Direct attachment" ，这样安装好以后就可以使用DHCP获取局域网IP（不同于宿主机）。
+
+"Direct attachment" 是一种网络模式，通常用于虚拟机的网络配置。这种模式的特点是直接将虚拟机网络接口（vNIC）与物理网络接口（pNIC）直接连接，而不通过虚拟交换机。这种配置有时也称为"直通"（passthrough）或 "直接连接"。
+
+"Direct attachment" 模式本质上是将虚拟机的网络接口（vNIC）直接连接到宿主机的物理网络接口（pNIC），而不通过虚拟交换机。在这种模式下，虚拟机可以与宿主机共享相同的物理网络接口，但不共享相同的 IP 地址。
+
+在这种模式下，虚拟机将被分配一个独立的 IP 地址，就像它是网络中的一个独立设备一样。该 IP 地址通常由 DHCP 服务器分配，或者你可以手动配置虚拟机的静态 IP 地址。
+![image](https://github.com/chenyjc/home-lab/assets/17583587/95d002de-5e63-42f0-a6dd-d4ff29ed4958)
+
