@@ -26,7 +26,7 @@
    sudo apt install virt-viewer
    ```
 
-5. **创建虚拟机：**
+5. **创建虚拟机(建议不使用命令行，稍等使用WebUI来创建)：**
    使用`virt-install`命令创建虚拟机，以下是一个简单的示例：
    ```bash
    sudo virt-install --name my-windows-vm --memory 2048 --vcpus 2 --disk size=20 --cdrom /path/to/windows.iso --os-type windows --os-variant win10
