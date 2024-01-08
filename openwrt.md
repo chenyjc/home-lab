@@ -51,5 +51,13 @@ config interface 'lan'
 用户名：root
 密码：password
 
+#### 关闭桥接
+![image](https://github.com/chenyjc/home-lab/assets/17583587/8b048f8b-13bd-4958-b923-e6a0dc77603a)
+
+#### DNS缓存
+![image](https://github.com/chenyjc/home-lab/assets/17583587/333ec8ad-46b8-47dd-9987-e20ff7ee8e13)
+
+#### Passwall设置
+![image](https://github.com/chenyjc/home-lab/assets/17583587/f3a74a76-71b4-4bd9-bf7b-b0f4c8e8127f)
 
         
