@@ -10,8 +10,8 @@
 
 2. **添加用户到libvirt组（避免使用sudo）：**
    ```bash
-   sudo adduser <your_username> libvirt
-   sudo adduser <your_username> libvirt-qemu
+   sudo adduser debian libvirt
+   sudo adduser debian libvirt-qemu
    ```
 
    请将 `<your_username>` 替换为您的实际用户名。
