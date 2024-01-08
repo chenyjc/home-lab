@@ -76,3 +76,22 @@
 在这种模式下，虚拟机将被分配一个独立的 IP 地址，就像它是网络中的一个独立设备一样。该 IP 地址通常由 DHCP 服务器分配，或者你可以手动配置虚拟机的静态 IP 地址。
 ![image](https://github.com/chenyjc/home-lab/assets/17583587/95d002de-5e63-42f0-a6dd-d4ff29ed4958)
 
+## 虚拟机快照以及恢复
+在运行状态创建快照，以便任何时候都可以恢复到这个快照。提前要设置好系统的时间自动同步服务。
+![image](https://github.com/chenyjc/home-lab/assets/17583587/445f3138-4ee4-4f4b-8b5a-ab9aedaefba6)
+
+## 定时启动和关闭虚拟机
+可以暂停和恢复，crontab如下：
+```shell
+sudo crontab -e
+30 8 * * 1-5 virsh resume win7
+10 15 * * 1-5 virsh suspend win7
+```
+
+但是KVM仍会有进程驻留，不够节省能源。因此可以改成从快照恢复和关机。恢复快照也很快，大约十几秒完成。
+```shell
+sudo crontab -e
+30 8 * * 1-5 virsh snapshot-revert --current --force win7 "win7_2024-01-08T13:28"
+10 16 * * 1-5 virsh shutdown win7
+```
+
