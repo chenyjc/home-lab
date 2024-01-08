@@ -45,5 +45,11 @@ config interface 'lan'
 
 ```
 
-### 5. 设置Openwrt（TBC）
+### 5. 设置Openwrt
+
+登录地址：http://192.168.31.101
+用户名：root
+密码：password
+
+
         
