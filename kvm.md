@@ -81,17 +81,18 @@
 ![image](https://github.com/chenyjc/home-lab/assets/17583587/445f3138-4ee4-4f4b-8b5a-ab9aedaefba6)
 
 ## 定时启动和关闭虚拟机
-可以暂停和恢复，crontab如下：
+可以暂停和恢复，比如每天8:30启动16:10关闭，crontab如下：
 ```shell
 sudo crontab -e
 30 8 * * 1-5 virsh resume win7
-10 15 * * 1-5 virsh suspend win7
+10 16 * * 1-5 virsh suspend win7
 ```
 
 但是KVM仍会有进程驻留，不够节省能源。因此可以改成从快照恢复和关机。恢复快照也很快，大约十几秒完成。
+
 ```shell
 sudo crontab -e
-30 8 * * 1-5 virsh snapshot-revert --current --force win7 "win7_2024-01-08T13:28"
+30 8 * * 1-5 virsh snapshot-revert win7 "win7_2024-01-08T13:28"
 10 16 * * 1-5 virsh shutdown win7
 ```
 
