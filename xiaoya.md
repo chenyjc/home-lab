@@ -22,7 +22,10 @@ sudo mount -t davfs http://192.168.31.100:6789/dav/ /mnt/alist -o rw,uid=debian,
 ```
 输入账号密码：
 Please enter the username to authenticate with server
+```text
 http://192.168.31.100:6789/dav/ or hit enter for none.
   Username: guest
 Please enter the password to authenticate user guest with server
 guest_Api789
+```
+随后可以在CASAOS的Files里设置共享，然后在其他电脑或者设备就可以看到共享文件夹。
