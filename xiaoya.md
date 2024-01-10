@@ -19,9 +19,10 @@ bash -c "$(curl http://docker.xiaoya.pro/update_new.sh)" -s host
 ```shell
 sudo mkdir /mnt/alist
 sudo mount -t davfs http://192.168.31.100:6789/dav/ /mnt/alist -o rw,uid=debian,gid=debian
+```
+输入账号密码：
 Please enter the username to authenticate with server
 http://192.168.31.100:6789/dav/ or hit enter for none.
   Username: guest
 Please enter the password to authenticate user guest with server
 guest_Api789
-```
