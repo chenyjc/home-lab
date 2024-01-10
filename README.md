@@ -1,8 +1,8 @@
 ## 记录X86小主机的设置过程。
 1. 操作系统设置参见: [debian.md](debian.md)
-2. 小雅安装设置参加：xiaoya.md
-3. 软路由OpenWrt参见：openwrt.md
-4. KVM虚拟机参见：kvm.md
+2. 小雅安装设置参加：[xiaoya.md](xiaoya.md)
+3. 软路由OpenWrt参见：[openwrt.md](openwrt.md)
+4. KVM虚拟机参见：[kvm.md](kvm.md)
 
 ## X86/64小主机的优点
 - 可扩展性好：可以扩容内存硬盘
