@@ -15,6 +15,15 @@ bash -c "$(curl http://docker.xiaoya.pro/update_new.sh)" -s host
 ## 索引
 重建等待10分钟后再访问。会自动完成索引。
 
+## 每日更新
+```
+sudo su
+crontab -e
+
+# Restart xiaoya everyday at 6
+0 6 * * * docker restart xiaoya
+```
+
 ## 挂载硬盘
 ```shell
 sudo mkdir /mnt/alist
